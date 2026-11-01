@@ -190,7 +190,9 @@ fig, ax= plt.subplots()   #
 # Set all font sizes here
 fs = 18  # change this one number to scale everything
 
-cs = ax.contourf(x, yf, zf_dB, levels, cmap=color_map)
+# values below the first level would be left white (speckles): give them the lowest colour; NaN gaps stay blank
+zf_dB_plot = np.where(zf_dB < levels[0], levels[0]+0.01, zf_dB)
+cs = ax.contourf(x, yf, zf_dB_plot, levels, cmap=color_map)
 
 plt.suptitle(plot_title, fontsize=fs+2)
 plt.xlabel(xaxis_title, fontsize=fs)
