@@ -224,7 +224,7 @@ scatter=ax.scatter(date, path_data[:,1], c=color, s=5)  # path_data[:,1] is init
 
 plt.xlabel("Time (Month-Day Hour UTC)")
 plt.ylabel("Initial elevation (˚)")
-plt.ylim(0,70)
+plt.ylim(0,80)
 plt.gcf().set_size_inches(8, 4, forward=True)
 plt.tight_layout()
 
